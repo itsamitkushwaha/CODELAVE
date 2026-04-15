@@ -28,3 +28,25 @@ variable "availability_zones" {
   description = "List of two Availability Zones to spread subnets across"
   type        = list(string)
 }
+
+# --- Database ---
+
+variable "db_instance_class" {
+  description = "RDS PostgreSQL instance class"
+  type        = string
+  default     = "db.t3.small"
+}
+
+variable "db_allocated_storage_gb" {
+  description = "Initial allocated storage for RDS in GB"
+  type        = number
+  default     = 20
+}
+
+# --- Redis ---
+
+variable "redis_node_type" {
+  description = "ElastiCache Redis node type"
+  type        = string
+  default     = "cache.t3.micro"
+}
